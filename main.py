@@ -4168,6 +4168,7 @@ byr:1950"""
     print(total)
 
     # Question 4 part 2
+    import pandas as pd
     passport = """ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
 byr:1937 iyr:2017 cid:147 hgt:183cm
 
@@ -4182,13 +4183,30 @@ hgt:179cm
 hcl:#cfa07d eyr:2025 pid:166559648
 iyr:2011 ecl:brn hgt:59in"""
     passport = passport.split("\n\n")
-    count = 0
+    total = len(passport)
     valid = passport
     field = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
 
+
+    print(passport)
     for ppl in passport:
         check = 0
-        if ""
+        if "byr" not in ppl:
+            total = total - 1
+            continue
+        else:
+            ppl = ppl.replace("\n", " ")
+            each = ppl.split(" ")
+            for i in each:
+                if "byr" in i:
+                    value = i.split(":")[1]
+                    if value < 1920 or value > 2002:
+                        total = total - 1
+                        continue
+        if
+
+
+
 
 
 
